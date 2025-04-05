@@ -1,4 +1,4 @@
-const opciones = ["PIEDRA", "PAPEL", "TIJERA"]
+/* const opciones = ["PIEDRA", "PAPEL", "TIJERA"]
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -36,7 +36,7 @@ while (jugar) {
     }
 
 }
-alert("GRACIAS JUGAR");
+alert("GRACIAS JUGAR"); */
 
 
 /* Ejercicio 2 */
@@ -48,30 +48,38 @@ let frutasOrden = frutas.sort();
 function singularAPlural(palabra){
     let palabraSingular = "";
     let ultimaPalabra = palabra.endsWith();
-    if(ultimaPalabra != "S"){
-        palabraSingular = ultimaPalabra+"s";
+    if(ultimaPalabra != "s"){
+        palabraSingular = palabra+"s";
     }else{
         palabraSingular = palabra;
     }
-    return palabra;
+    return palabraSingular;
 }
+
 
 let frutasPrural = [];
 
 for (let fruta of frutas){
-    frutasPrural = singularAPlural(fruta);
+    frutasPrural.push(singularAPlural(fruta));
 }
+
+console.log("Frutas prural: "+frutasPrural.toString());
 
 function existeFruta(fruta){
     let frutaEncontrada = frutas.includes(fruta);
     return frutaEncontrada;
 }
 
+console.log(existeFruta('mango'));
+console.log(existeFruta('uva'));
+
 let frutasCortas = [];
 
 for (let fruta of frutas){
-    if(fruta.length < 4){
+    if(fruta.length <= 4){
         frutasCortas.push(fruta);
     }
 }
+
+console.log(frutasCortas.toString());
 
